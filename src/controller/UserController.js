@@ -5,6 +5,7 @@ const userModel = require("../model/userModel");
 
 const signup = async (req, res) => {
     const {name, username, email, password} = req.body;
+    console.log(req.body);
     try{
         const existingUser = await userModel.findOne({email: email});
         if(existingUser){
